@@ -16,13 +16,13 @@ export default function VaultItem({ item, onDelete }) {
       <div className="flex gap-2">
         <button
           onClick={copyData}
-          className="px-3 py-1 text-sm bg-accent text-black rounded"
+          className="px-3 py-1 text-sm bg-accent text-black rounded cursor-pointer"
         >
           <MdContentCopy />
         </button>
         <button
           onClick={() => onDelete(item.id)}
-          className="px-3 py-1 text-sm text-red-500 bg-white border rounded"
+          className="px-3 py-1 text-sm text-red-500 bg-white border rounded cursor-pointer"
         >
           Delete
         </button>

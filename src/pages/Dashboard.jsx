@@ -44,6 +44,7 @@ export default function Dashboard() {
         <h2 className="text-xl font-semibold mb-4">
           Credentials & Commands Vault
         </h2>
+        <div className="w-40 px-3 py-1 text-md font-semibold mb-4 border border-gray-400 rounded cursor-pointer" style={{ textAlign: "center",marginLeft:"83%", marginTop: "-41px" }}>Add Creadentials</div>
 
         <div className="space-y-3">
           {vault.map((item) => (
@@ -59,21 +60,21 @@ export default function Dashboard() {
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-card p-5 rounded-md border border-gray-300">
-          <p className="font-semibold">📇 Contacts</p>
+          <p className="font-semibold">Contacts</p>
           <p className="text-sm text-gray-400">
             Manage people you connect with
           </p>
         </div>
 
         <div className="bg-card p-5 rounded-md border border-gray-300">
-          <p className="font-semibold">💬 Chats</p>
+          <p className="font-semibold">Chats</p>
           <p className="text-sm text-gray-400">
             Private encrypted conversations
           </p>
         </div>
 
         <div className="bg-card p-5 rounded-md border border-gray-300">
-          <p className="font-semibold">👥 Groups</p>
+          <p className="font-semibold">Groups</p>
           <p className="text-sm text-gray-400">
             Create & manage private groups
           </p>

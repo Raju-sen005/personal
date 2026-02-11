@@ -113,7 +113,7 @@ export default function Contacts() {
 
         <button
           onClick={saveContact}
-          className="bg-white text-black px-4 py-1.5 rounded border border-gray-400"
+          className="bg-white text-black px-4 py-1.5 rounded border border-gray-400 cursor-pointer"
         >
           {editingId ? "Update Contact" : "Save Contact"}
         </button>
@@ -136,23 +136,24 @@ export default function Contacts() {
             <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => copyCredentials(contact.credentials)}
-                className="px-3 py-1 text-sm bg-accent text-black rounded"
+                className="px-3 py-1 text-sm bg-accent text-black rounded cursor-pointer"
               >
                 <MdContentCopy />
 
               </button>
               <button
                 onClick={() => editContact(contact)}
-                className="px-3 py-0 text-sm bg-white text-black rounded border"
+                className="px-3 py-0 text-sm bg-white text-black rounded border cursor-pointer"
               >
                 Edit
               </button>
               <button
                 onClick={() => deleteContact(contact.id)}
-                className="px-3 py-0 text-sm text-red-500 bg-white border rounded"
+                className="px-3 py-0 text-sm text-red-500 bg-white border rounded cursor-pointer"
               >
                 Delete
               </button>
+              
             </div>
           </div>
         ))}

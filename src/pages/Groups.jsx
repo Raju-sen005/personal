@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 export default function Groups() {
   const [groups, setGroups] = useState([
@@ -61,23 +62,23 @@ export default function Groups() {
 
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold">👥 Groups</h1>
+        <h1 className="text-2xl font-bold">Groups</h1>
         <p className="text-sm text-gray-400">
           Create & manage your private groups
         </p>
       </div>
 
       {/* Create Group */}
-      <div className="bg-card p-5 rounded-xl border border-gray-800 flex gap-3">
+      <div className="bg-card p-5 rounded-md border border-gray-400 flex gap-3">
         <input
           value={groupName}
           onChange={(e) => setGroupName(e.target.value)}
           placeholder="New group name"
-          className="flex-1 p-2 rounded bg-dark border border-gray-700"
+          className="flex-1 p-2 rounded bg-dark border border-gray-300"
         />
         <button
           onClick={createGroup}
-          className="bg-accent text-black px-5 rounded"
+          className="bg-white text-black px-5 rounded cursor-pointer"
         >
           Create
         </button>
@@ -88,13 +89,13 @@ export default function Groups() {
         {groups.map((group) => (
           <div
             key={group.id}
-            className="bg-card p-5 rounded-xl border border-gray-800 space-y-4"
+            className="bg-card p-5 rounded-md border border-gray-400 space-y-4"
           >
             <div className="flex justify-between items-center">
               <h2 className="font-semibold text-lg">{group.name}</h2>
               <button
                 onClick={() => deleteGroup(group.id)}
-                className="text-sm text-red-500"
+                className="text-sm text-red-500 border rounded px-3 py-1 cursor-pointer"
               >
                 Delete
               </button>
@@ -114,9 +115,10 @@ export default function Groups() {
                   <span>{member}</span>
                   <button
                     onClick={() => removeMember(group.id, member)}
-                    className="text-xs text-red-400"
+                    className="text-xs text-red-500 cursor-pointer"
                   >
-                    Remove
+                    <IoMdRemoveCircleOutline />
+
                   </button>
                 </div>
               ))}
@@ -128,11 +130,11 @@ export default function Groups() {
                 value={memberName}
                 onChange={(e) => setMemberName(e.target.value)}
                 placeholder="Member name"
-                className="flex-1 p-2 rounded bg-dark border border-gray-700"
+                className="flex-1 p-2 rounded bg-dark border border-gray-400"
               />
               <button
                 onClick={() => addMember(group.id)}
-                className="bg-accent text-black px-4 rounded"
+                className="bg-accent text-black px-4 rounded cursor-pointer"
               >
                 Add
               </button>

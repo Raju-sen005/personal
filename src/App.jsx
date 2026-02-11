@@ -6,6 +6,7 @@ import Chat from "./pages/Chat";
 import Groups from "./pages/Groups";
 import Sidebar from "./components/Sidebar";
 import { useAuth } from "./context/AuthContext";
+import Topbar from "./components/Topbar";
 
 export default function App() {
   const { token } = useAuth();
@@ -14,17 +15,18 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex">
-        <Sidebar />
-        <div className="flex-1">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/groups" element={<Groups />} />
-          </Routes>
-        </div>
+      <Sidebar />
+      <Topbar />
+
+      <div className="ml-60 min-h-screen pt-14 p-4">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/groups" element={<Groups />} />
+        </Routes>
       </div>
     </BrowserRouter>
+
   );
 }

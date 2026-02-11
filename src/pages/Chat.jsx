@@ -5,7 +5,7 @@ export default function Chat() {
     {
       id: 1,
       sender: "them",
-      text: "🔒 Encrypted hello message",
+      text: "Encrypted hello message",
       time: "10:30 AM",
     },
   ]);
@@ -36,14 +36,14 @@ export default function Chat() {
 
       {/* Header */}
       <div className="mb-4">
-        <h1 className="text-2xl font-bold">💬 Private Chat</h1>
+        <h1 className="text-2xl font-bold">Private Chat</h1>
         <p className="text-sm text-gray-400">
           End-to-end encrypted (backend ready)
         </p>
       </div>
 
       {/* Chat Box */}
-      <div className="flex-1 bg-card p-4 rounded-xl border border-gray-800 overflow-y-auto space-y-3">
+      <div className="flex-1 bg-card p-4 rounded-md border border-gray-400 overflow-y-auto space-y-3">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -52,10 +52,10 @@ export default function Chat() {
             }`}
           >
             <div
-              className={`max-w-xs p-3 rounded-xl text-sm ${
+              className={`max-w-xs p-3 rounded-md text-sm ${
                 msg.sender === "me"
                   ? "bg-accent text-black"
-                  : "bg-dark border border-gray-700"
+                  : "bg-dark border border-gray-300"
               }`}
             >
               <p>{msg.text}</p>
@@ -75,11 +75,11 @@ export default function Chat() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           placeholder="Type encrypted message..."
-          className="flex-1 p-3 rounded-l-xl bg-dark border border-gray-700 outline-none"
+          className="flex-1 p-3 rounded-l-md bg-dark border border-gray-400 outline-none"
         />
         <button
           onClick={sendMessage}
-          className="px-6 bg-accent text-black rounded-r-xl"
+          className="px-6 bg-blue-500 text-white cursor-pointer rounded-r-md"
         >
           Send
         </button>

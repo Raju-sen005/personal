@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="w-60 bg-card h-screen p-5 shadow-md">
+    <div className="fixed left-0 top-0 w-60 h-screen bg-card p-5 shadow-sm">
       <h1 className="text-xl font-bold mb-6"> User Vault</h1>
 
       <nav className="space-y-3">
