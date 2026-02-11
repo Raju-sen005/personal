@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { MdContentCopy } from "react-icons/md";
+
 
 export default function Contacts() {
   const [contacts, setContacts] = useState([
@@ -65,14 +67,14 @@ export default function Contacts() {
 
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold">📇 Contacts Vault</h1>
+        <h1 className="text-2xl font-bold">Contacts Vault</h1>
         <p className="text-sm text-gray-400">
           Store people, credentials & commands securely
         </p>
       </div>
 
       {/* Add / Edit Form */}
-      <div className="bg-card p-5 rounded-xl border border-gray-800 space-y-4">
+      <div className="bg-card p-5 rounded-md border border-gray-300 space-y-4">
         <h2 className="font-semibold">
           {editingId ? "Edit Contact" : "Add New Contact"}
         </h2>
@@ -83,21 +85,21 @@ export default function Contacts() {
             value={form.name}
             onChange={handleChange}
             placeholder="Name"
-            className="p-2 rounded bg-dark border border-gray-700"
+            className="p-2 rounded-sm bg-dark border border-gray-400"
           />
           <input
             name="phone"
             value={form.phone}
             onChange={handleChange}
             placeholder="Phone"
-            className="p-2 rounded bg-dark border border-gray-700"
+            className="p-2 rounded-sm bg-dark border border-gray-400"
           />
           <input
             name="email"
             value={form.email}
             onChange={handleChange}
             placeholder="Email"
-            className="p-2 rounded bg-dark border border-gray-700"
+            className="p-2 rounded-sm bg-dark border border-gray-400"
           />
         </div>
 
@@ -106,12 +108,12 @@ export default function Contacts() {
           value={form.credentials}
           onChange={handleChange}
           placeholder="Credentials / Commands (encrypted later)"
-          className="w-full p-2 rounded bg-dark border border-gray-700 h-24"
+          className="w-full p-2 rounded-sm bg-dark border border-gray-400 h-24"
         />
 
         <button
           onClick={saveContact}
-          className="bg-accent text-black px-6 py-2 rounded"
+          className="bg-white text-black px-4 py-1.5 rounded border border-gray-400"
         >
           {editingId ? "Update Contact" : "Save Contact"}
         </button>
@@ -122,7 +124,7 @@ export default function Contacts() {
         {contacts.map((contact) => (
           <div
             key={contact.id}
-            className="bg-card p-4 rounded-xl border border-gray-800 flex flex-col md:flex-row justify-between gap-4"
+            className="bg-card p-4 rounded-md border border-gray-300 flex flex-col md:flex-row justify-between gap-4"
           >
             <div>
               <p className="font-semibold">{contact.name}</p>
@@ -136,17 +138,18 @@ export default function Contacts() {
                 onClick={() => copyCredentials(contact.credentials)}
                 className="px-3 py-1 text-sm bg-accent text-black rounded"
               >
-                Copy
+                <MdContentCopy />
+
               </button>
               <button
                 onClick={() => editContact(contact)}
-                className="px-3 py-1 text-sm bg-yellow-500 text-black rounded"
+                className="px-3 py-0 text-sm bg-white text-black rounded border"
               >
                 Edit
               </button>
               <button
                 onClick={() => deleteContact(contact.id)}
-                className="px-3 py-1 text-sm bg-red-600 rounded"
+                className="px-3 py-0 text-sm text-red-500 bg-white border rounded"
               >
                 Delete
               </button>

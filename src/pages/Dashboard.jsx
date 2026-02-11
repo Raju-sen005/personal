@@ -42,7 +42,7 @@ export default function Dashboard() {
       {/* Vault Section */}
       <div>
         <h2 className="text-xl font-semibold mb-4">
-          🔐 Credentials & Commands Vault
+          Credentials & Commands Vault
         </h2>
 
         <div className="space-y-3">
@@ -58,21 +58,21 @@ export default function Dashboard() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-card p-5 rounded-xl border border-gray-800">
+        <div className="bg-card p-5 rounded-md border border-gray-300">
           <p className="font-semibold">📇 Contacts</p>
           <p className="text-sm text-gray-400">
             Manage people you connect with
           </p>
         </div>
 
-        <div className="bg-card p-5 rounded-xl border border-gray-800">
+        <div className="bg-card p-5 rounded-md border border-gray-300">
           <p className="font-semibold">💬 Chats</p>
           <p className="text-sm text-gray-400">
             Private encrypted conversations
           </p>
         </div>
 
-        <div className="bg-card p-5 rounded-xl border border-gray-800">
+        <div className="bg-card p-5 rounded-md border border-gray-300">
           <p className="font-semibold">👥 Groups</p>
           <p className="text-sm text-gray-400">
             Create & manage private groups

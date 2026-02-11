@@ -1,3 +1,5 @@
+import { MdContentCopy } from "react-icons/md";
+
 export default function VaultItem({ item, onDelete }) {
   const copyData = () => {
     navigator.clipboard.writeText(item.command);
@@ -5,7 +7,7 @@ export default function VaultItem({ item, onDelete }) {
   };
 
   return (
-    <div className="bg-card p-4 rounded-xl flex justify-between items-center border border-gray-800">
+    <div className="bg-card p-4 rounded-md flex justify-between items-center border border-gray-300">
       <div>
         <p className="font-semibold">{item.title}</p>
         <p className="text-xs text-gray-400">Encrypted Data</p>
@@ -16,11 +18,11 @@ export default function VaultItem({ item, onDelete }) {
           onClick={copyData}
           className="px-3 py-1 text-sm bg-accent text-black rounded"
         >
-          Copy
+          <MdContentCopy />
         </button>
         <button
           onClick={() => onDelete(item.id)}
-          className="px-3 py-1 text-sm bg-red-600 rounded"
+          className="px-3 py-1 text-sm text-red-500 bg-white border rounded"
         >
           Delete
         </button>
